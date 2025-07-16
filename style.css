@@ -1,0 +1,616 @@
+@font-face {
+            font-family: 'Retro Floral';
+            src: url('src/RetroFloral.woff') format('woff'); /* Placeholder URL, replace with actual font file if available */
+            font-weight: normal;
+            font-style: normal;
+        }
+@font-face {
+            font-family: 'Transcity Regular';
+            src: url('src/TranscityRegular.woff') format('woff'); /* Placeholder URL, replace with actual font file if available */
+            font-weight: normal;
+            font-style: normal;
+        }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-image: radial-gradient(circle, #414141, #010101);
+    color: #e0e0e0; /* Lighter text for dark background */
+    font-family: 'Tw Cen MT';
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 2rem;
+  font-family: 'Britannic', sans-serif;
+  color: white;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #161616;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease; /* Move transition here */
+}
+
+header.scrolled {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+header .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+
+
+header h1 {
+  display: inline-block;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+header nav {
+  display: inline-block;
+}
+
+header nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex; /* Make items horizontal */
+  gap: 30px;     /* Spacing between items */
+}
+
+header nav ul li {
+  display: inline-block;
+}
+
+header nav ul li a {      
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+header nav ul li a.active {
+  color: #f4da64;
+  font-weight: bold;
+  border-bottom: 2px solid #f4da64;
+}
+
+header nav ul li a:hover {
+    color: #F4DA64;
+    font-weight: bold;
+}
+
+#home {
+    justify-items: center;
+    translate:0% 0% -10%;
+}
+
+/* Smooth floating animation */
+.floating-image {
+  animation: floatUpDown 4s ease-in-out infinite;
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 15px #252525); /* subtle glow */
+  transition: transform 0.3s ease;
+}
+
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Optional: Parallax hover tilt */
+.animated-banner:hover .floating-image {
+  transform: rotateX(3deg) rotateY(3deg) scale(1.02);
+  filter: drop-shadow(0 0 20px #fff176);
+}
+
+.sparkle-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.sparkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, #ffffff88 0%, transparent 60%);
+  border-radius: 50%;
+  animation: sparkleTwinkle 2s infinite ease-in-out;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.sparkle1 {
+  top: 20%;
+  left: 30%;
+  animation-delay: 0s;
+}
+
+.sparkle2 {
+  top: 50%;
+  left: 70%;
+  animation-delay: 1s;
+}
+
+.sparkle3 {
+  top: 80%;
+  left: 40%;
+  animation-delay: 0.5s;
+}
+
+@keyframes sparkleTwinkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+.hero {
+  padding: 40px 20px; /* or adjust as needed */
+}
+
+.hero h2 {
+    color: #fff;
+    font-size: 6rem; /* Adjusted for better responsiveness */
+    font-family: 'Retro Floral', sans-serif;
+    line-height: 1; /* Adjust line height */
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+  padding: 60px 0;
+  text-align: center;
+  margin-bottom: 40px;
+  border-radius: 1rem;
+  border: 3px solid;
+  border-image: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet,
+    red
+  ) 1;
+  animation: borderShift 10s linear infinite;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes borderShift {
+  0% {
+    border-image-source: linear-gradient(
+      90deg,
+      red,
+      orange,
+      yellow,
+      green,
+      cyan,
+      blue,
+      violet,
+      red
+    );
+  }
+  50% {
+    border-image-source: linear-gradient(
+      270deg,
+      red,
+      orange,
+      yellow,
+      green,
+      cyan,
+      blue,
+      violet,
+      red
+    );
+  }
+  100% {
+    border-image-source: linear-gradient(
+      90deg,
+      red,
+      orange,
+      yellow,
+      green,
+      cyan,
+    );
+  }
+}
+
+.prizes-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  margin-bottom: 40px;
+}
+
+.prizes-section h2 {
+  font-size: 3rem;
+  font-family: 'Retro Floral', sans-serif;
+  color: #f4da64;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.prize-description {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+}
+
+.prize-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.prize-list li {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px 25px;
+  border-radius: 12px;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prize-tier {
+  font-size: 1.6rem;
+  color: #f4da64;
+  font-family: 'Transcity Regular', sans-serif;
+}
+
+.prize-details {
+  font-size: 1.6rem;
+  font-family: 'Tw Cen MT', sans-serif;
+}
+
+.results-section h2, .lucky-numbers-section h2 {
+    font-size: 3.5rem; /* Consistent heading size for sections */
+    color: #fff;
+    font-family: 'Retro Floral', sans-serif;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.results-section p, .lucky-numbers-section p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    color: #c0c0c0;
+}
+
+/* Lucky Number Generator specific styles */
+.lucky-numbers-section {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.lucky-numbers-section .generate-btn {
+    margin: 20px auto;
+}
+
+.lucky-numbers-output {
+    margin: 0 auto;
+}
+
+
+.generate-btn {
+    background-color: #E25C57; /* Red button color */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 9999px; /* Fully rounded */
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(226, 92, 87, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.generate-btn:hover {
+    background-color: #F4DA64; /* Yellow on hover */
+    box-shadow: 0 8px 20px rgba(244, 218, 100, 0.6);
+    transform: translateY(-2px);
+}
+
+.lucky-numbers-output {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.75rem;
+    padding: 25px;
+    margin-top: 20px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    min-height: 100px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.lucky-numbers-output h3 {
+    font-size: 1.8rem;
+    color: #F4DA64; /* Yellow for numbers */
+    margin-bottom: 15px;
+    font-family: 'Transcity Regular', sans-serif;
+    letter-spacing: 1px;
+}
+
+.lucky-numbers-output p {
+    font-size: 1.05rem;
+    color: #c0c0c0;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.loading-spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #E25C57;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 5rem;
+    }
+    .results-section h2, .lucky-numbers-section h2 {
+        font-size: 2.5rem;
+    }
+    .generate-btn {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+    .lucky-numbers-output h3 {
+        font-size: 1.5rem;
+    }
+    .lucky-numbers-output p {
+        font-size: 0.95rem;
+    }
+}
+
+ .lottery-results {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.result-entry {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 20px 30px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.result-time {
+  display: block;
+  font-size: 2rem;
+  color: #f4da64;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.result-numbers {
+  font-size: 2.5rem;
+  color: #fff;
+  letter-spacing: 2px;
+  font-family: 'Retro Floral', sans-serif;
+}
+
+.current-time {
+  color: #f4da64;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.contact-section {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 60px 20px;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-section h2 {
+  font-size: 3rem;
+  font-family: 'Retro Floral', sans-serif;
+  color: #fff;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.contact-section p {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  font-size: 1.2rem;
+  color: #f4da64;
+  margin: 5px 0;
+}
+
+/* Coin Animation */
+.coin-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.coin {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  opacity: 0.7;
+  animation: floatCoin linear infinite;
+}
+
+@keyframes floatCoin {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/*Footer */
+.site-footer {
+  background-color: #111;
+  color: #ccc;
+  padding: 60px 20px 20px;
+  font-family: 'Raleway', sans-serif;
+  margin-top: 60px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left h3 {
+  color: #f4da64;
+  font-family: 'Retro Floral', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.footer-contact p {
+  margin: 5px 0;
+}
+
+.footer-links, .footer-legal {
+  min-width: 180px;
+}
+
+.footer-links h4, .footer-legal h4 {
+  font-size: 1.2rem;
+  color: #f4da64;
+  margin-bottom: 10px;
+}
+
+.footer-links ul,
+.footer-legal ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li,
+.footer-legal li {
+  margin-bottom: 8px;
+}
+
+.footer-links a,
+.footer-legal a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-legal a:hover {
+  color: #f4da64;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #888;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+}
+
